@@ -1,0 +1,45 @@
+:host{
+  height: 300px;
+}
+form{
+  justify-content: space-between;
+}
+
+#match-form-container{
+  padding: 10px;
+  width: 320px;
+  height: 240px;
+}
+form h2,
+form h4,
+#match-rounds > h2{
+  margin: 10px auto;
+}
+
+.input-field{
+  margin: 10px;
+}
+.input-field input,
+.input-field select{
+  margin: 0 10px;
+}
+
+.match-rounds-list-item{
+  height: 40px;
+  padding: 10px;
+  justify-content: space-between;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.match-rounds-list-item:not(:first-of-type){
+  border-top: 1px solid rgba(0,0,0,.12);
+}
+
+
+@media only screen and (max-width: 425px){
+  #match-rounds{
+    display: none !important;
+  }
+}

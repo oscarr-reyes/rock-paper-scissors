@@ -1,0 +1,78 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+html,
+body{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background: #EBEBEB;
+}
+.flexed-row{
+  display: flex !important;
+  flex-direction: row;
+}
+.flexed-column{
+  display: flex !important;
+  flex-direction: column;
+}
+.flexed-row > .flex-grow,
+.flexed-column > .flex-grow{
+  flex: 1;
+}
+.flexed-row.flexed-reverse{
+  flex-direction: row-reverse !important;
+}
+.centered{
+  margin: auto;
+}
+.centered-column{
+  margin: auto 0;
+}
+.centered-row{
+  margin: 0 auto;
+}
+.card{
+  background-color: #FFF;
+  -webkit-box-shadow:  0 3px 1px -2px rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12);
+  -moz-box-shadow:  0 3px 1px -2px rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12);
+  box-shadow:  0 3px 1px -2px rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12);
+}
+.bar-loader{
+  height: 4px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background-color: #ddd;
+  border-radius: 1px;
+}
+.bar-loader:before{
+  position: absolute;
+  display: block;
+  content: "";
+  left: -200px;
+  width: 200px;
+  height: 4px;
+  background-color: #22AAD0;
+  animation: loading 1s linear infinite;
+}
+@keyframes loading{
+  from{
+    left: -200px; width: 30%;
+  }
+  50%{
+    width: 30%;
+  }
+  70%{
+    width: 70%;
+  }
+  80%{
+    left: 50%;
+  }
+  95%{
+    left: 120%;
+  }
+  to{
+    left: 100%;
+  }
+}

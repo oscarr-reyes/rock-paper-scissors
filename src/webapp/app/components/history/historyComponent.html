@@ -1,0 +1,26 @@
+<h2>History</h2>
+<div id="history-list" class="card flexed-column">
+    <div class="history-list-item flexed-row" *ngFor="let match of matches.slice().reverse()">
+        <div class="history-date">
+            <span><b>Time: </b></span>
+            <span>{{match.time}}</span>
+        </div>
+        <div class="history-match">
+            <span class="history-match-label"><b>Match: </b></span>
+            <span>{{match.player1}} vs {{match.player2}}</span>
+        </div>
+        <div class="history-divider">
+            <span>=></span>
+        </div>
+        <div class="history-winner">
+            <span class="history-winner-label"><b>Winner: </b></span>
+            <span>{{match[match.winner]}}</span>
+        </div>
+    </div>
+
+    <div class="bar-loader centered" *ngIf="loading"></div>
+
+    <div id="history-list-emtpy" class="flexed-row flex-grow" *ngIf="!loading && matches.length == 0">
+        <span class="centered">There are no history match stored</span>
+    </div>
+</div>

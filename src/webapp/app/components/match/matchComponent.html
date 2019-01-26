@@ -1,0 +1,59 @@
+<div id="match-form" class="flex-grow flexed-row">
+    <div id="match-form-container" class="flexed-row centered card">
+        <form id="match-setup-form" class="flexed-column flex-grow" (submit)="setupHandler()"
+              *ngIf="formDisplay == 'setup'">
+            <div class="form-header flexed-column">
+                <h2 class="centered-row">Enter player's names</h2>
+            </div>
+            <div class="form-body centered-row">
+                <div class="input-field">
+                    <label for="player1-name-input">Player 1</label>
+                    <input type="text" name="player1" id="player1-name-input" [(ngModel)]="players.player1" maxlength="20">
+                </div>
+                <div class="input-field">
+                    <label for="player2-name-input">Player 2</label>
+                    <input type="text" name="player2" id="player2-name-input" [(ngModel)]="players.player2" maxlength="20">
+                </div>
+            </div>
+            <div class="form-footer flexed-column">
+                <button>Start</button>
+            </div>
+        </form>
+        <form id="match-play-form" class="flexed-column flex-grow" (submit)="playHandler()"
+              *ngIf="formDisplay == 'play'">
+            <div class="form-header flexed-column">
+                <h2>Round {{score.length + 1}}</h2>
+                <h4>{{players[currentPlayer]}}</h4>
+            </div>
+            <div class="form-body centered-row">
+                <div class="input-field">
+                    <label for="player-hand-select">Select Move</label>
+                    <select name="hand" id="player-hand-select" [(ngModel)]="round[currentPlayer]">
+                        <option value="rock">Rock</option>
+                        <option value="paper">Paper</option>
+                        <option value="scissors">Scissors</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-footer flexed-column">
+                <button>Ok</button>
+            </div>
+        </form>
+    </div>
+</div>
+<div id="match-rounds" class="flex-grow flexed-column">
+    <h2>Score</h2>
+    <div id="match-rounds-list" class="flexed-column card">
+        <div class="match-rounds-list-item flexed-row" *ngFor="let winner of score; let round = index">
+            {{round + 1}}
+            <div class="match-round-winner">
+                <span><b>Winner: </b></span>
+                <span>{{players[winner.player]}}</span>
+            </div>
+            <div class="match-round-hand">
+                <span><b>Hand: </b></span>
+                <span>{{winner.hand}}</span>
+            </div>
+        </div>
+    </div>
+</div>

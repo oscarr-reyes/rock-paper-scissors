@@ -1,0 +1,11 @@
+{
+	"development": {
+		"server": {
+			"port": 8080
+		},
+		"database": {
+			"host": "localhost",
+			"database": "RPS-test"
+		}
+	}
+}

@@ -53,3 +53,9 @@ dkms.conf
 
 # IDEA files
 .idea/
+
+# Node modules
+node_modules/
+
+# Angular out directory
+dist/
